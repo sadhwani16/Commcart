@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Commcart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+
+        #joinMessage {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        #progressBarContainer {
+            margin-top: 10px;
+            width: 100%;
+            background-color: #f3f3f3;
+            height: 20px;
+        }
+
+        #progressBar {
+            height: 100%;
+            width: 0;
+            background-color: green;
+        }
+
+        #liveTimer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><h2 style="color: #ff5f5f; text-decoration: none;">Commcart</h3></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                <a href="#" id="close"><i class="fa far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <i id="bar" class=" fa fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="images/products/9.jpeg" width="100%" id="mainimg" alt="">
+
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="images/products/1.png" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="images/products/2.png" width="90%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="images/products/3.png" width="100%" class="small-img" alt="">
+                </div>
+
+                <div class="small-img-col">
+                    <img src="images/products/4.png" width="90%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6>Home / T-shirt</h4>
+    
+                <select>
+                    <option>Select Tshirt</option>
+                    <option>White Github</option>
+                    <option>Blue Cofee </option>
+                    <option>Black Girl </option>
+                    <option>Mahroon Unlimited </option>
+                  
+                </select>
+
+                
+        <div class="single-pro-details">
+            <h6>Home / T-shirt</h4>
+                <h2>569.Rs</h2>
+                <select>
+                    <option>Select Size</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>XXL</option>
+                </select>
+                <input type="number" value="1">
+                <button class="normal" onclick="addToCart()">Add To Cart</button>
+                 <!-- Join Now Button -->
+                <button class="normal" id="joinNow" onclick="joinNow()">Join Now</button>
+                <p id="joinMessage"></p> <!-- Display the join message -->
+
+
+                 <!-- Unjoin Button -->
+                 <button class="normal" id="unjoinNow" onclick="unjoinNow()">Unjoin</button>
+                 <p id="joinMessage"></p> <!-- Display the join message -->
+ 
+                 <!-- Progress Bar -->
+                 <div id="progressBarContainer">
+                    <div id="progressBar"></div>
+                </div>
+
+                <!-- Live Timer -->
+                <p id="liveTimer"></p>
+
+                
+                <div id="joinMessage">Join to see the current price!</div>
+                <div id="price">Current Price:</div>
+                <div style="width: 100%; background-color: #ddd;">
+                    <div id="progressBar" style="width: 0%; height: 20px; background-color: #4caf50;"></div>
+                </div>
+              <!-- Buy Now Button -->
+                <button class="normal" onclick="buyNow()">Buy Now</button>
+                
+                <h4>Product Descricption</h4>
+                <span>Introducing our Floral Printed Shirt, the epitome of casual elegance and springtime charm. Crafted
+                    with the finest materials and adorned with a vibrant floral pattern, this shirt effortlessly blends
+                    style and comfort. Whether you're strolling through the city streets or enjoying a weekend getaway,
+                    this shirt adds a pop of color and personality to any ensemble. With its tailored fit and breathable
+                    fabric, it's perfect for both day-to-day wear and special occasions.</span>
+        </div>
+    </section>
+
+    
+
+    <section id="product1" class="section-p1">
+        <h2>New Arrivals</h2>
+        <p>On Special Prices</p>
+        <div class="pro-container">
+
+            <div class="pro">
+                <img src="images/products/f5.jpg" alt="">
+                <div class="des">
+                    <span>Adidas</span>
+                    <h5>Floral-Printed Shirt</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>499.rs</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="images/products/f6.jpg" alt="">
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Dual-toned Shirt</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>499.rs</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="images/products/n5.jpg" alt="">
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Denim Shirt</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star "></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>1200.rs</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+
+            <div class="pro">
+                <img src="images/products/n6.jpg" alt="">
+                <div class="des">
+                    <span>Nike</span>
+                    <h5> Short pants</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>999.rs</h4>
+                </div>
+                <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign up</h4>
+            <p>Gets E-mail updates on our <span>latest products.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Enter your E-mail">
+            <button class="normal">Sign up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="images/logo/logo.jpeg" style="height: 100px;width: 100px;">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Indian Institute of technology Madras Chennai 600036 </p>
+            <p><strong>Phone:</strong>+91 9826591325</p>
+            <p><strong>Hours:</strong>24*7 Mon -Sun</p>
+
+
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class=" fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play Store</p>
+            <div class="row">
+                <img src="images/pay/app.jpg" alt="">
+                <img src="images/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="images/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2024, Commcart.com, Inc. or its affiliates </p>
+        </div>
+    </footer>
+    <script>
+        function addToCart() {
+
+            var productName = document.querySelector(".single-pro-details h4").textContent;
+            var productPrice = document.querySelector(".single-pro-details h2").textContent;
+            var productImage = document.querySelector(".single-pro-image img").src;
+
+           
+            var product = {
+                name: productName,
+                price: productPrice,
+                image: productImage
+            };
+
+            var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            cart.push(product);
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            alert("Product added to cart!");
+
+            window.location.href = "cart.html";
+        }
+            // Join Now functionality with progress bar
+                    // Base price and minimum price
+            const basePrice = 569;  // Base price when joinCount is 0
+            const minPrice = 450;    // Minimum price cap
+            let joinCount = localStorage.getItem('joinCount') ? parseInt(localStorage.getItem('joinCount')) : 0;
+            const maxJoin = 30;
+
+            function calculatePrice() {
+                // Calculate price based on joinCount
+                let price = basePrice - ((basePrice - minPrice) * (joinCount / maxJoin));
+                return Math.max(price, minPrice);  // Ensure the price doesn't go below minPrice
+            }
+
+            function updatePriceDisplay() {
+                // Update price display
+                document.getElementById("price").textContent = `Current Price: $${calculatePrice().toFixed(2)}`;
+            }
+
+            function joinNow() {
+                if (joinCount < maxJoin) {
+                    joinCount++;
+                    localStorage.setItem('joinCount', joinCount);
+                    document.getElementById("joinMessage").textContent = `You have joined! Total members: ${joinCount}`;
+
+                    // Update progress bar
+                    let progressBar = document.getElementById("progressBar");
+                    let percentage = (joinCount / maxJoin) * 100;
+                    progressBar.style.width = percentage + "%";
+
+                    // Update price
+                    updatePriceDisplay();
+                } else {
+                    document.getElementById("joinMessage").textContent = "Sorry, the maximum number of members (30) has been reached.";
+                }
+            }
+
+            // Initial display setup
+            document.addEventListener("DOMContentLoaded", () => {
+                updatePriceDisplay();  // Set initial price display based on existing joinCount
+                let progressBar = document.getElementById("progressBar");
+                let percentage = (joinCount / maxJoin) * 100;
+                progressBar.style.width = percentage + "%";
+            });
+
+
+
+
+          // Unjoin Now functionality with progress bar
+          function unjoinNow() {
+            if (joinCount > 0) {
+                joinCount--;
+                localStorage.setItem('joinCount', joinCount);
+                document.getElementById("joinMessage").textContent = `You have unjoined! Total members: ${joinCount}`;
+
+                // Update progress bar
+                let progressBar = document.getElementById("progressBar");
+                let percentage = (joinCount / maxJoin) * 100;
+                progressBar.style.width = percentage + "%";
+            } else {
+                document.getElementById("joinMessage").textContent = "You have not joined yet!";
+            }
+        }
+
+
+        // Live Timer functionality
+        function updateLiveTimer() {
+            let timerElement = document.getElementById("liveTimer");
+            let now = new Date();
+            let hours = String(now.getHours()).padStart(2, '0');
+            let minutes = String(now.getMinutes()).padStart(2, '0');
+            let seconds = String(now.getSeconds()).padStart(2, '0');
+            timerElement.textContent = `Current Time: ${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update timer every second
+        setInterval(updateLiveTimer, 1000);
+    </script>
+</body>
+
+</html>

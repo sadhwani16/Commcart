@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Commcart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .checked {
+            color: orange;
+        }
+        #search-form {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+        }
+
+        #search-input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+
+        #search-form button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 0 5px 5px 0;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        #search-form button:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        
+
+        /* Slider styles */
+        .slider-container { position: relative; max-width: 100%; margin: auto; overflow: hidden; }
+        .slide { display: none; }
+        .slide.act { display: block; }
+        .slider-navigation { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; }
+        .slider-navigation .prev, .slider-navigation .next { cursor: pointer; padding: 10px; color: white; background-color: rgba(0, 0, 0, 0.5); }
+        .dots-container { text-align: center; margin-top: 10px; }
+        .dot { height: 15px; width: 15px; margin: 0 5px; background-color: #bbb; display: inline-block; border-radius: 50%; cursor: pointer; }
+        .dot.act { background-color: #333; }
+
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><h2 style="color: #ff5f5f;">Commcart</h3></a>
+        <form id="search-form" action="#" method="GET">
+            <input type="text" id="search-input" placeholder="Search products...">
+            <button type="submit" class="normal" style="background-color: #088178;">
+                <i class="fa fa-search"></i></button>
+        </form>
+
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">login</a></li>
+                <li id="lg-bag"><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                <a href="#" id="close"><i class="fa far fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <i id="bar" class=" fa fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <!--  <section id="hero">
+        <h6 > Spring/Summer 2024</h6>
+        <h1>Get up to 30% Off On New Arrivals</h1><br>
+        <button onclick="window.location.href='shop.html'" >Explore Now</button>
+    </section>-->
+    
+
+
+       <!-- Slider Section -->
+    <section class="slider-container">
+        <div class="slide act">
+            <img src="images/slider/1.png" alt="Slide 1" style="width:100%">
+        </div>
+        <div class="slide">
+            <img src="images/slider/2.png" alt="Slide 2" style="width:100%">
+        </div>
+        <div class="slide">
+            <img src="images/slider/3.png" alt="Slide 3" style="width:100%">
+        </div>
+        <!--<div class="slide">
+            <img src="https://via.placeholder.com/800x300?text=Slide+4" alt="Slide 4" style="width:100%">
+        </div> -->
+
+        <div class="slider-navigation">
+            <span class="prev">&#10094; Previous</span>
+            <span class="next">Next &#10095;</span>
+        </div>
+        <div class="dots-container">
+            <span class="dot act"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+
+
+    <section id="product1" class="section-p1">
+        <h2>Group Buy Deals </h2>
+        <p></p>
+        <div class="pro-container">
+            <div class="pro" onclick="window.location.href='shop.html'">
+                <img src="images/products/7.jpeg" alt="">
+                <div class="des">
+                    <span>Instibuzz</span>
+                    <h5>White Green</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>399.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+    
+            <div class="pro">
+                <img src="images/products/5.png" alt="">
+                <div class="des">
+                    <span>IITea</span>
+                    <h5>Git Dreams</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>569.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+    
+            <div class="pro">
+                <img src="images/products/6.png" alt="">
+                <div class="des">
+                    <span>IITea</span>
+                    <h5>Git Dreams</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>569.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+    
+            <div class="pro">
+                <img src="images/products/9.jpeg" alt="">
+                <div class="des">
+                    <span>IITea</span>
+                    <h5>Git Dreams</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>569.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="test.html"><button class="join-now">Join</button></a>
+            </div>
+        </div>
+    
+        <div class="pro-container">
+    
+            <div class="pro">
+                <img src="https://themewagon.github.io/hexashop/assets/images/women-02.jpg" alt="">
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Classic Dress</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>499.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+    
+            <div class="pro">
+                <img src="https://themewagon.github.io/malefashion/img/product/product-1.jpg" alt="">
+                <div class="des">
+                    <span>New Balance</span>
+                    <h5>Casual Shoes</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>499.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+    
+            <div class="pro">
+                <img src="images/products/n5.jpg" alt="">
+                <div class="des">
+                    <span>Zara</span>
+                    <h5>Denim Shirt</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star "></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>1200.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+    
+            <div class="pro">
+                <img src="images/products/n6.jpg" alt="">
+                <div class="des">
+                    <span>Nike</span>
+                    <h5>Short Pants</h5>
+                    <div class="star">
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star checked"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <h4>999.rs</h4>
+                </div>
+                <a href="shop.html"><button class="buy-now">Buy Now</button></a>
+                <a href="single.html"><button class="join-now">Join</button></a>
+            </div>
+        </div>
+    </section>
+    
+
+    <div class="features-ads" style="background-color: #f9f9f9; padding: 50px 0;">
+        <div class="container" style="padding: 10px;">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="single-features-ads first" style="text-align: center;">
+                        <img src="images/slider/4.jpeg" alt="" style="width: 1280px; height: 751px;"> 
+                       
+                      <!--  <p>Fusce urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum malesuada aliquet libero viverra cursus.</p> -->
+                    </div>
+                </div>
+                <!--<div class="col-lg-4">
+                    <div class="single-features-ads second" style="text-align: center;">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bitcoin.svg" alt="" style="width: 80px; height: 80px;">
+                        <h4 style="margin-top: 20px;">100% Money back</h4>
+                        <p>Urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum malesuada aliquet libero viverra cursus.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="single-features-ads" style="text-align: center;">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="" style="width: 80px; height: 80px;">
+                        <h4 style="margin-top: 20px;">Online support 24/7</h4>
+                        <p>Urna quam, euismod sit amet mollis quis, vestibulum quis velit. Vestibulum malesuada aliquet libero viverra cursus.</p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign up</h4>
+            <p>Gets E-mail updates on our <span>latest products.</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Enter your E-mail">
+            <button class="normal">Sign up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="images/logo/logo.jpeg" style="height: 100px;width: 100px;">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Indian Institute of technology Madras Chennai 600036 </p>
+            <p><strong>Phone:</strong>+91 9826591325</p>
+            <p><strong>Hours:</strong>24*7 Mon -Sun</p>
+
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class=" fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-pinterest"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign in</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play Store</p>
+            <div class="row">
+                <img src="images/pay/app.jpg" alt="">
+                <img src="images/pay/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="images/pay/pay.png" alt="">
+        </div>
+
+        <div class="copyright">
+            <p>© 2024, Commcart.com, Inc. or its affiliates </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+           
+            var searchForm = document.getElementById("search-form");
+            var searchInput = document.getElementById("search-input");
+
+            
+            searchForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                // Get the search query entered by the user
+                var query = searchInput.value.trim().toLowerCase();
+ 
+                performSearch(query);
+            });
+        });
+
+      
+        function performSearch(query) {
+            
+            var products = document.querySelectorAll("#product1 .pro");
+
+            var found = false;
+
+            products.forEach(function (product) {
+                var productName = product.querySelector(".des h5");
+
+                if (productName.textContent.toLowerCase().includes(query)) {
+                    product.style.display = "block";
+
+                    found = true;
+                    product.scrollIntoView({ behavior: "smooth"});
+                }
+                else {
+                    product.style.display = "none";
+                }
+            });
+
+            
+            if (!found) {
+                alert("No matching product found.");
+            }
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll(".slide");
+            const dots = document.querySelectorAll(".dot");
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                slides.forEach(slide => slide.classList.remove("act"));
+                dots.forEach(dot => dot.classList.remove("act"));
+                slides[index].classList.add("act");
+                dots[index].classList.add("act");
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            document.querySelector(".next").addEventListener("click", nextSlide);
+            document.querySelector(".prev").addEventListener("click", prevSlide);
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+
+            showSlide(currentSlide);
+        });
+
+    </script>
+</body>
+
+</html>
