@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Local Brands - CommCart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shopping-basket"></i>
+                <span>CommCart</span>
+            </a>
+        </div>
+
+        <form id="search-form" action="#" method="GET">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search local brands & products...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Discover</a></li>
+                <li><a href="groups.html">My Groups</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="account-menu">
+                    <a href="login.html">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li id="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div id="mobile-toggle">
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section id="shop-hero">
+        <div class="shop-hero-content">
+            <h1>Discover Local Treasures</h1>
+            <p>Support small businesses and unlock community discounts</p>
+        </div>
+    </section>
+
+    <section id="shop-filters" class="section-p1">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="category-filter">Category</label>
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="home">Home & Living</option>
+                    <option value="food">Food & Beverages</option>
+                    <option value="beauty">Beauty & Personal Care</option>
+                    <option value="crafts">Arts & Crafts</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="brand-filter">Brand</label>
+                <select id="brand-filter">
+                    <option value="all">All Brands</option>
+                    <option value="instibuzz">Instibuzz</option>
+                    <option value="iitea">IITea</option>
+                    <option value="local-crafts">Local Crafts</option>
+                    <option value="homegrown">Homegrown</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="discount-filter">Group Discount</label>
+                <select id="discount-filter">
+                    <option value="all">All Discounts</option>
+                    <option value="30+">30% or more</option>
+                    <option value="40+">40% or more</option>
+                    <option value="50+">50% or more</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sort-by">Sort By</label>
+                <select id="sort-by">
+                    <option value="popular">Most Popular</option>
+                    <option value="newest">Newest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="discount">Highest Discount</option>
+                </select>
+            </div>
+            
+            <div class="filter-toggle">
+                <button class="btn-outline" id="filter-toggle-btn">
+                    <i class="fas fa-sliders-h"></i> More Filters
+                </button>
+            </div>
+        </div>
+        
+        <div class="view-toggle">
+            <button class="view-btn active" data-view="grid">
+                <i class="fas fa-th-large"></i>
+            </button>
+            <button class="view-btn" data-view="list">
+                <i class="fas fa-list"></i>
+            </button>
+        </div>
+        
+        <div class="active-filters">
+            <span class="filter-tag">Fashion <i class="fas fa-times"></i></span>
+            <span class="filter-tag">Group Discount <i class="fas fa-times"></i></span>
+            <button class="clear-filters">Clear All</button>
+        </div>
+    </section>
+    
+    <section id="shop-video-banner" class="section-p1">
+        <div class="video-banner-content">
+            <div class="video-text">
+                <h2>Trending Now</h2>
+                <p>Discover our most popular items through short videos</p>
+                <button class="btn-outline-light">Browse All Videos</button>
+            </div>
+            <div class="video-slider">
+                <div class="video-slide">
+                    <div class="video-container">
+                        <img src="images/products/video-thumb-1.jpg" alt="Product video thumbnail">
+                        <div class="video-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="brand-tag">Instibuzz</div>
+                    </div>
+                    <h4>White Green Tee</h4>
+                </div>
+                
+                <div class="video-slide">
+                    <div class="video-container">
+                        <img src="images/products/video-thumb-2.jpg" alt="Product video thumbnail">
+                        <div class="video-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="brand-tag">IITea</div>
+                    </div>
+                    <h4>Git Dreams Collection</h4>
+                </div>
+                
+                <div class="video-slide">
+                    <div class="video-container">
+                        <img src="images/products/video-thumb-3.jpg" alt="Product video thumbnail">
+                        <div class="video-overlay">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="brand-tag">Local Crafts</div>
+                    </div>
+                    <h4>Handmade Accessories</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommended-groups" class="section-p1">
+        <div class="section-header">
+            <h2>Join Active Groups</h2>
+            <p>Groups that match your interests</p>
+        </div>
+        
+        <div class="group-carousel">
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/products/7.jpeg" alt="White Green T-shirt">
+                    <div class="group-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 67%;"></div>
+                        </div>
+                        <div class="progress-text">2/3 joined</div>
+                    </div>
+                </div>
+                <div class="group-details">
+                    <div class="brand">Instibuzz</div>
+                    <h3 class="product-title">White Green Premium T-shirt</h3>
+                    <div class="price-container">
+                        <div class="original-price">₹599</div>
+                        <div class="group-price">₹399</div>
+                    </div>
+                    <div class="discount-tag">33% OFF with 3 buyers</div>
+                    <div class="expiry">Expires in: 2 days 14 hours</div>
+                    <button class="btn-primary btn-sm">Join Group</button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/products/5.png" alt="IITea Git Dreams">
+                    <div class="group-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 40%;"></div>
+                        </div>
+                        <div class="progress-text">2/5 joined</div>
+                    </div>
+                </div>
+                <div class="group-details">
+                    <div class="brand">IITea</div>
+                    <h3 class="product-title">Git Dreams Limited Edition</h3>
+                    <div class="price-container">
+                        <div class="original-price">₹799</div>
+                        <div class="group-price">₹569</div>
+                    </div>
+                    <div class="discount-tag">40% OFF with 5 buyers</div>
+                    <div class="expiry">Expires in: 1 day 8 hours</div>
+                    <button class="btn-primary btn-sm">Join Group</button>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/products/6.png" alt="IITea Premium Collection">
+                    <div class="group-badge">Almost Full!</div>
+                    <div class="group-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                        <div class="progress-text">3/4 joined</div>
+                    </div>
+                </div>
+                <div class="group-details">
+                    <div class="brand">IITea</div>
+                    <h3 class="product-title">Premium Collection Bundle</h3>
+                    <div class="price-container">
+                        <div class="original-price">₹999</div>
+                        <div class="group-price">₹569</div>
+                    </div>
+                    <div class="discount-tag">45% OFF with 4 buyers</div>
+                    <div class="expiry">Expires in: 16 hours</div>
+                    <button class="btn-primary btn-sm">Join Group</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-more">
+            <button onclick="window.location.href='groups.html'" class="btn-outline">View All Groups</button>
+        </div>
+    </section>
+
+    <section id="featured-brands-banner" class="section-p1">
+        <div class="section-header">
+            <h2>Shop by Brand</h2>
+            <p>Curated local brands you'll love</p>
+        </div>
+        
+        <div class="brand-banner-container">
+            <div class="brand-banner-card">
+                <div class="brand-banner-image">
+                    <img src="images/brands/instibuzz-logo.png" alt="Instibuzz">
+                </div>
+                <div class="brand-banner-info">
+                    <h3>Instibuzz</h3>
+                    <p>Premium sustainable fashion with locally sourced materials</p>
+                    <button class="btn-outline">Shop Collection</button>
+                </div>
+            </div>
+            
+            <div class="brand-banner-card">
+                <div class="brand-banner-image">
+                    <img src="images/brands/iitea-logo.png" alt="IITea">
+                </div>
+                <div class="brand-banner-info">
+                    <h3>IITea</h3>
+                    <p>Artisanal tea blends crafted with care</p>
+                    <button class="btn-outline">Shop Collection</button>
+                </div>
+            </div>
+            
+            <div class="brand-banner-card">
+                <div class="brand-banner-image">
+                    <img src="images/brands/local-crafts-logo.png" alt="Local Crafts">
+                </div>
+                <div class="brand-banner-info">
+                    <h3>Local Crafts</h3>
+                    <p>Handmade accessories supporting traditional artisans</p>
+                    <button class="btn-outline">Shop Collection</button>
+                </div>
+            </div>
+            
+            <div class="brand-banner-card">
+                <div class="brand-banner-image">
+                    <img src="images/brands/homegrown-logo.png" alt="Homegrown">
+                </div>
+                <div class="brand-banner-info">
+                    <h3>Homegrown</h3>
+                    <p>Organic home products made with eco-friendly processes</p>
+                    <button class="btn-outline">Shop Collection</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="product-grid" class="section-p1">
+        <div class="section-header">
+            <h2>All Products</h2>
+            <p>Discover unique items from local brands</p>
+        </div>
+        
+        <div class="products-container">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/7.jpeg" alt="White Green T-shirt">
+                    <div class="product-labels">
+                        <span class="label-new">New</span>
+                        <span class="label-discount">-33%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Instibuzz</div>
+                    <h3 class="product-title">White Green Premium T-shirt</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(21)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹849</div>
+                        <div class="group-price">₹722</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>1/3 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <a href="#" class="page-link active">1</a>
+            <a href="#" class="page-link">2</a>
+            <a href="#" class="page-link">3</a>
+            <a href="#" class="page-link next">Next <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+
+    <section id="community-shop-banner">
+        <div class="banner-content">
+            <h2>Create Your Own Shopping Group</h2>
+            <p>Select products, invite friends, and enjoy exclusive discounts together</p>
+            <div class="banner-stats">
+                <div class="stat-item">
+                    <div class="stat-number">42%</div>
+                    <div class="stat-label">Average Savings</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.5K+</div>
+                    <div class="stat-label">Active Groups</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">18K+</div>
+                    <div class="stat-label">Happy Shoppers</div>
+                </div>
+            </div>
+            <button class="btn-white" onclick="window.location.href='create-group.html'">Start a Group</button>
+        </div>
+    </section>
+
+    <section id="recently-viewed" class="section-p1">
+        <div class="section-header">
+            <h2>Recently Viewed</h2>
+            <p>Products you've checked out</p>
+        </div>
+        
+        <div class="recent-products-carousel">
+            <div class="recent-product">
+                <img src="images/products/5.png" alt="IITea Git Dreams">
+                <h4>Git Dreams Limited Edition</h4>
+                <p>₹569</p>
+                <button class="btn-outline btn-sm">View Again</button>
+            </div>
+            
+            <div class="recent-product">
+                <img src="images/products/7.jpeg" alt="White Green T-shirt">
+                <h4>White Green Premium T-shirt</h4>
+                <p>₹399</p>
+                <button class="btn-outline btn-sm">View Again</button>
+            </div>
+            
+            <div class="recent-product">
+                <img src="images/products/6.png" alt="Local Crafts Wind Chimes">
+                <h4>Handcrafted Wind Chimes</h4>
+                <p>₹722</p>
+                <button class="btn-outline btn-sm">View Again</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="newsletter-content">
+            <h2>Join Our Community</h2>
+            <p>Get updates on new brands, group discounts, and community events</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email address">
+                <button class="btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>CommCart</span>
+                </div>
+                <p>Shop socially, support local brands, and save together.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Discover</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="brands.html">Brands</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="returns.html">Returns & Refunds</a></li>
+                    <li><a href="shipping.html">Shipping Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="login.html">Sign In</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="cart.html">My Cart</a></li>
+                    <li><a href="orders.html">Order History</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="payment-methods">
+                <img src="images/pay/pay.png" alt="Payment Methods">
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CommCart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div id="quick-view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="quick-view-container">
+                <div class="quick-view-image">
+                    <img src="images/products/7.jpeg" alt="Product Image">
+                    <div class="image-thumbnails">
+                        <img src="images/products/7.jpeg" alt="Thumbnail 1" class="active">
+                        <img src="images/products/5.png" alt="Thumbnail 2">
+                        <img src="images/products/6.png" alt="Thumbnail 3">
+                    </div>
+                </div>
+                <div class="quick-view-details">
+                    <div class="product-brand">Instibuzz</div>
+                    <h2>White Green Premium T-shirt</h2>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(24 reviews)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹599</div>
+                        <div class="group-price">₹399</div>
+                        <div class="discount-tag">33% OFF with 3 buyers</div>
+                    </div>
+                    <div class="product-description">
+                        <p>Premium quality, sustainably sourced cotton t-shirt with unique design. Perfect for casual wear and comfortable for all-day use.</p>
+                    </div>
+                    <div class="product-options">
+                        <div class="size-options">
+                            <label>Size:</label>
+                            <div class="options-buttons">
+                                <button class="option-btn">S</button>
+                                <button class="option-btn active">M</button>
+                                <button class="option-btn">L</button>
+                                <button class="option-btn">XL</button>
+                            </div>
+                        </div>
+                        <div class="color-options">
+                            <label>Color:</label>
+                            <div class="options-buttons">
+                                <button class="color-btn" style="background-color: #fff; border: 1px solid #ddd;"></button>
+                                <button class="color-btn active" style="background-color: #4CAF50;"></button>
+                                <button class="color-btn" style="background-color: #2196F3;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-progress">
+                        <div class="progress-text">Group Buy Progress: 2/3 joined</div>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 67%;"></div>
+                        </div>
+                        <div class="expiry">Expires in: 2 days 14 hours</div>
+                    </div>
+                    <div class="quantity-control">
+                        <label>Quantity:</label>
+                        <div class="quantity-buttons">
+                            <button class="qty-btn minus">-</button>
+                            <input type="number" value="1" min="1" max="10">
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                    <div class="quick-view-buttons">
+                        <button class="btn-primary">Buy Now</button>
+                        <button class="btn-outline">Join Group</button>
+                        <button class="btn-outline add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                    <div class="product-meta">
+                        <div class="meta-item"><span>Brand:</span> Instibuzz</div>
+                        <div class="meta-item"><span>Category:</span> Fashion, T-shirts</div>
+                        <div class="meta-item"><span>Tags:</span> Sustainable, Premium, Cotton</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(24)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹599</div>
+                        <div class="group-price">₹399</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>2/3 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/5.png" alt="IITea Git Dreams">
+                    <div class="product-labels">
+                        <span class="label-featured">Featured</span>
+                        <span class="label-discount">-40%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">IITea</div>
+                    <h3 class="product-title">Git Dreams Limited Edition</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(18)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹799</div>
+                        <div class="group-price">₹569</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>2/5 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/6.png" alt="IITea Premium Collection">
+                    <div class="product-labels">
+                        <span class="label-trending">Trending</span>
+                        <span class="label-discount">-45%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">IITea</div>
+                    <h3 class="product-title">Premium Collection Bundle</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(32)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹999</div>
+                        <div class="group-price">₹569</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>3/4 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/7.jpeg" alt="Local Crafts Handmade Bracelet">
+                    <div class="product-labels">
+                        <span class="label-eco">Eco-friendly</span>
+                        <span class="label-discount">-25%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Local Crafts</div>
+                    <h3 class="product-title">Handmade Beaded Bracelet</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(42)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹499</div>
+                        <div class="group-price">₹374</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>1/3 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/6.png" alt="Homegrown Organic Soap">
+                    <div class="product-labels">
+                        <span class="label-eco">Organic</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Homegrown</div>
+                    <h3 class="product-title">Organic Lavender Soap Set</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(27)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹349</div>
+                        <div class="group-price">₹279</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>2/4 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/5.png" alt="Instibuzz Canvas Tote Bag">
+                    <div class="product-labels">
+                        <span class="label-eco">Sustainable</span>
+                        <span class="label-discount">-20%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Instibuzz</div>
+                    <h3 class="product-title">Canvas Tote Bag</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(19)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹699</div>
+                        <div class="group-price">₹559</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>1/3 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/7.jpeg" alt="IITea Tea Starter Kit">
+                    <div class="product-labels">
+                        <span class="label-new">New</span>
+                        <span class="label-discount">-30%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">IITea</div>
+                    <h3 class="product-title">Tea Starter Kit</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(34)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹1299</div>
+                        <div class="group-price">₹909</div>
+                    </div>
+                    <div class="group-buy-info">
+                        <i class="fas fa-users"></i> <span>2/5 joined the group</span>
+                    </div>
+                    <div class="product-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Buy Now</button>
+                        <button class="btn-outline" onclick="window.location.href='single.html'">Join Group</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/6.png" alt="Local Crafts Wind Chimes">
+                    <div class="product-labels">
+                        <span class="label-handmade">Handmade</span>
+                        <span class="label-discount">-15%</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="action-btn wishlist-btn" title="Add to Wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="action-btn quick-view-btn" title="Quick View">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" title="Add to Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Local Crafts</div>
+                    <h3 class="product-title">Handcrafted Wind Chimes</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i

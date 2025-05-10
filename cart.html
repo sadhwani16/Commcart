@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommCart - Your Social Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff5f5f;
+            --secondary: #ff8a5f;
+            --text-dark: #333;
+            --text-light: #777;
+            --bg-light: #f8f9fa;
+            --bg-accent: #fff4f4;
+        }
+        
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .cart-summary {
+            background-color: var(--bg-light);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        
+        /* Cart item styling */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+        
+        .item-details {
+            flex-grow: 1;
+        }
+        
+        .item-name {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+        
+        .item-seller {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        
+        .item-price {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+        
+        .item-actions {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            background-color: var(--bg-light);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .quantity {
+            margin: 0 10px;
+            width: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .remove-button {
+            padding: 5px 10px;
+            background-color: transparent;
+            color: var(--text-light);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .remove-button i {
+            margin-right: 5px;
+        }
+        
+        /* Group discount section */
+        .group-discount {
+            background-color: var(--bg-accent);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px dashed var(--primary);
+        }
+        
+        .discount-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .discount-header i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .discount-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            border-radius: 4px;
+            width: 33%; /* This will be dynamic based on progress */
+        }
+        
+        .discount-message {
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+        
+        .friend-invite {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .invite-input {
+            flex-grow: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        .invite-btn {
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        /* Summary section */
+        .cart-summary h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+        
+        .summary-label {
+            color: var(--text-light);
+        }
+        
+        .summary-value {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #ddd;
+            margin-top: 15px;
+            padding-top: 15px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .checkout-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Recommendations section */
+        .recommendations {
+            margin-top: 40px;
+        }
+        
+        .recommendations h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .product {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 15px;
+        }
+        
+        .product-name {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+        
+        .product-seller {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+        
+        .product-price {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 8px 0;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Empty cart styling */
+        #empty-cart-message {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        #empty-cart-message h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        #empty-cart-message p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+        
+        .continue-shopping-btn {
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .continue-shopping-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Friend activity sidebar */
+        .activity-sidebar {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .activity-header {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-header i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+        
+        .friend-activity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .friend-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .activity-text {
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+        
+        .activity-time {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .cart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html">
+            <h2 style="color: #ff5f5f; text-decoration: none;">CommCart</h2>
+        </a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="lg-bag"><a class="active" href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                <a href="#" id="close"><i class="fa fa-times"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <i id="bar" class="fa fa-outdent"></i>
+        </div>
+    </section>
+
+    <section id="page-header" class="about-header">
+        <h2>Your Shopping Cart</h2>
+        <h3 style="color: white;">Shop better together - unlock group discounts and share with friends</h3>
+    </section>
+
+    <div class="cart-container">
+        <div id="cart-content">
+            <!-- Main cart content will be dynamically displayed here -->
+        </div>
+        
+        <div id="empty-cart-message" style="display: none;">
+            <h3>Your cart is empty</h3>
+            <p>Discover amazing products from local brands and shop with friends!</p>
+            <button class="continue-shopping-btn" onclick="window.location.href='shop.html'">Explore Products</button>
+        </div>
+    </div>
+
+    <!-- Recommendations section -->
+    <section class="recommendations cart-container">
+        <h3>You Might Also Like</h3>
+        <div class="product-grid" id="recommended-products">
+            <!-- Recommendations will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <footer class="section-p1" style="border-top:0.5px solid grey; margin-top: 40px;">
+        <div class="col">
+            <img class="logo" src="images/logo/logo.jpeg" style="height: 100px;width: 100px;">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Indian Institute Of Technology Madras, Chennai 600036 </p>
+            <p><strong>Phone:</strong> +91 9826591325</p>
+            <p><strong>Hours:</strong> 24*7 Hrs Mon-Sun</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            displayCartItems();
+            loadRecommendedProducts();
+        });
+
+        // Function to display cart items and cart summary
+        function displayCartItems() {
+            // In a real implementation, this would fetch from your backend
+            // For demo purposes, we'll use mock data
+            const cartItems = [
+                {
+                    id: 1,
+                    name: "Instibuzz",
+                    seller: "Campus Brands",
+                    price: 399,
+                    quantity: 1,
+                    image: "images/products/7.jpeg"
+                },
+                {
+                    id: 2,
+                    name: "IITea",
+                    seller: "Local Brews Co.",
+                    price: 399,
+                    quantity: 2,
+                    image: "images/products/5.png"
+                }
+            ];
+
+            // If cart is empty
+            if (cartItems.length === 0) {
+                document.getElementById("cart-content").innerHTML = "";
+                document.getElementById("empty-cart-message").style.display = "block";
+                return;
+            }
+
+            document.getElementById("empty-cart-message").style.display = "none";
+
+            // Calculate cart totals
+            let subtotal = 0;
+            cartItems.forEach(item => {
+                subtotal += item.price * item.quantity;
+            });
+            
+            const shipping = 40;
+            const discount = calculateGroupDiscount(subtotal, cartItems.length);
+            const total = subtotal + shipping - discount;
+
+            // Generate cart HTML
+            let cartHTML = `
+                <div class="cart-header">
+                    <div class="cart-title">Shopping Cart (${cartItems.length} items)</div>
+                </div>
+                
+                <div class="cart-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px;">
+                    <div class="cart-items">
+            `;
+
+            // Generate each cart item HTML
+            cartItems.forEach(item => {
+                cartHTML += `
+                    <div class="cart-item" data-id="${item.id}">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-details">
+                            <h3 class="item-name">${item.name}</h3>
+                            <p class="item-seller">Sold by: ${item.seller}</p>
+                            <p class="item-price">₹${item.price}</p>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                                </div>
+                                <button class="remove-button" onclick="removeCartItem(${item.id})">
+                                    <i class="fa fa-trash"></i> Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // Group discount section
+            cartHTML += `
+                    <div class="group-discount">
+                        <div class="discount-header">
+                            <i class="fas fa-users"></i>
+                            <div class="discount-title">Community Group Discount</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <p class="discount-message">Invite 2 more friends to unlock a 50% discount!</p>
+                        <div class="friend-invite">
+                            <input type="email" class="invite-input" placeholder="Friend's email address">
+                            <button class="invite-btn">Invite</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="activity-sidebar">
+                        <div class="activity-header"><i class="fas fa-bolt"></i> Friend Activity</div>
+                        <div class="friend-activity">
+                            <div class="friend-avatar" style="background-color: #4CAF50;">R</div>
+                            <div>
+                                <div class="activity-text">Rahul added IITea to cart</div>
+                                <div class="activity-time">5 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="friend-activity">
+                            <div class="friend-avatar" style="background-color: #2196F3;">A</div>
+                            <div>
+                                <div class="activity-text">Anjali is shopping for campus merch</div>
+                                <div class="activity-time">10 minutes ago</div>
+                            </div>
+                        </div>
+                        <div class="friend-activity">
+                            <div class="friend-avatar" style="background-color: #FF9800;">P</div>
+                            <div>
+                                <div class="activity-text">Priya purchased Instibuzz</div>
+                                <div class="activity-time">25 minutes ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span class="summary-label">Subtotal</span>
+                            <span class="summary-value">₹${subtotal}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Shipping</span>
+                            <span class="summary-value">₹${shipping}</span>
+                        </div>
+                        <div class="summary-row">
+                            <span class="summary-label">Group Discount</span>
+                            <span class="summary-value">-₹${discount}</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Total</span>
+                            <span>₹${total}</span>
+                        </div>
+                        <button class="checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+            `;
+
+            document.getElementById("cart-content").innerHTML = cartHTML;
+        }
+
+        // Calculate group discount based on cart value and number of items
+        function calculateGroupDiscount(subtotal, itemCount) {
+            // Simple example logic - this would be more complex in real implementation
+            // based on your group discount rules
+            if (itemCount >= 3) {
+                return Math.round(subtotal * 0.5); // 50% discount
+            } else if (itemCount >= 2) {
+                return Math.round(subtotal * 0.2); // 20% discount
+            }
+            return 0;
+        }
+
+        // Function to update quantity
+        function updateQuantity(itemId, change) {
+            // In real implementation, this would update in your backend
+            console.log(`Update item ${itemId} quantity by ${change}`);
+            // After updating, refresh the cart display
+            displayCartItems();
+        }
+
+        // Function to remove item from cart
+        function removeCartItem(itemId) {
+            // In real implementation, this would delete from your backend
+            console.log(`Remove item ${itemId} from cart`);
+            // After removing, refresh the cart display
+            displayCartItems();
+        }
+
+        // Function to load recommended products
+        function loadRecommendedProducts() {
+            // In a real implementation, this would fetch personalized recommendations
+            // For demo purposes, we'll use mock data
+            const recommendations = [
+                {
+                    id: 3,
+                    name: "Campus Hoodie",
+                    seller: "Campus Threads",
+                    price: 899,
+                    image: "images/products/7.jpeg"
+                },
+                {
+                    id: 4,
+                    name: "Handcrafted Notebook",
+                    seller: "Local Artisan Co.",
+                    price: 299,
+                    image: "images/products/5.png"
+                },
+                {
+                    id: 5,
+                    name: "Eco Water Bottle",
+                    seller: "Green Living",
+                    price: 499,
+                    image: "images/products/7.jpeg"
+                },
+                {
+                    id: 6,
+                    name: "Artisan Coffee Beans",
+                    seller: "Local Brews",
+                    price: 349,
+                    image: "images/products/5.png"
+                }
+            ];
+
+            let recommendationsHTML = '';
+            recommendations.forEach(product => {
+                recommendationsHTML += `
+                    <div class="product">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-info">
+                            <h3 class="product-name">${product.name}</h3>
+                            <p class="product-seller">${product.seller}</p>
+                            <p class="product-price">₹${product.price}</p>
+                            <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById("recommended-products").innerHTML = recommendationsHTML;
+        }
+
+        // Function to add product to cart
+        function addToCart(productId) {
+            // In real implementation, this would add to your backend
+            console.log(`Add product ${productId} to cart`);
+            alert("Product added to your cart!");
+            // After adding, refresh the cart display
+            displayCartItems();
+        }
+    </script>
+</body>
+</html>

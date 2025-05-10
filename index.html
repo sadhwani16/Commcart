@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommCart - Social Shopping for Local Brands</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shopping-basket"></i>
+                <span>CommCart</span>
+            </a>
+        </div>
+
+        <form id="search-form" action="#" method="GET">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search local brands & products...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+
+        <nav>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Discover</a></li>
+                <li><a href="groups.html">My Groups</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="account-menu">
+                    <a href="login.html">
+                        <i class="fas fa-user"></i>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li id="cart-icon">
+                    <a href="cart.html">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div id="mobile-toggle">
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Shop Together, Save Together</h1>
+            <p>Discover local brands and unlock group discounts with friends</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="window.location.href='shop.html'">Discover Products</button>
+                <button class="btn-secondary" onclick="window.location.href='groups.html'">Join a Group</button>
+            </div>
+        </div>
+        <div class="hero-video">
+            <video autoplay muted loop>
+                <source src="images/hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-store"></i>
+            </div>
+            <h3>Local Brands</h3>
+            <p>Discover unique products from local businesses in your community</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3>Group Discounts</h3>
+            <p>Form shopping groups to unlock better deals the more people join</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">
+                <i class="fas fa-thumbs-up"></i>
+            </div>
+            <h3>Social Shopping</h3>
+            <p>Browse with friends, share products, and vote on group purchases</p>
+        </div>
+    </section>
+
+    <section id="trending-videos" class="section-p1">
+        <div class="section-header">
+            <h2>Trending Products</h2>
+            <p>Discover popular items through short videos</p>
+        </div>
+        
+        <div class="video-carousel">
+            <div class="video-item">
+                <div class="video-container">
+                    <img src="images/products/video-thumb-1.jpg" alt="Product video thumbnail">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="brand-tag">Instibuzz</div>
+                </div>
+                <div class="video-info">
+                    <h4>White Green Tee</h4>
+                    <div class="video-meta">
+                        <span class="video-views"><i class="fas fa-eye"></i> 2.4k</span>
+                        <span class="video-likes"><i class="fas fa-heart"></i> 340</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-item">
+                <div class="video-container">
+                    <img src="images/products/video-thumb-2.jpg" alt="Product video thumbnail">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="brand-tag">IITea</div>
+                </div>
+                <div class="video-info">
+                    <h4>Git Dreams Collection</h4>
+                    <div class="video-meta">
+                        <span class="video-views"><i class="fas fa-eye"></i> 1.8k</span>
+                        <span class="video-likes"><i class="fas fa-heart"></i> 210</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-item">
+                <div class="video-container">
+                    <img src="images/products/video-thumb-3.jpg" alt="Product video thumbnail">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="brand-tag">Local Crafts</div>
+                </div>
+                <div class="video-info">
+                    <h4>Handmade Accessories</h4>
+                    <div class="video-meta">
+                        <span class="video-views"><i class="fas fa-eye"></i> 3.2k</span>
+                        <span class="video-likes"><i class="fas fa-heart"></i> 450</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-item">
+                <div class="video-container">
+                    <img src="images/products/video-thumb-4.jpg" alt="Product video thumbnail">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="brand-tag">Zara</div>
+                </div>
+                <div class="video-info">
+                    <h4>Summer Collection</h4>
+                    <div class="video-meta">
+                        <span class="video-views"><i class="fas fa-eye"></i> 5.7k</span>
+                        <span class="video-likes"><i class="fas fa-heart"></i> 890</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-more">
+            <button onclick="window.location.href='videos.html'" class="btn-outline">View All Videos</button>
+        </div>
+    </section>
+
+    <section id="active-groups" class="section-p1">
+        <div class="section-header">
+            <h2>Active Group Buys</h2>
+            <p>Join these groups to unlock discounts together</p>
+        </div>
+        
+        <div class="group-container">
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/products/7.jpeg" alt="White Green T-shirt">
+                    <div class="group-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 67%;"></div>
+                        </div>
+                        <div class="progress-text">2/3 joined</div>
+                    </div>
+                </div>
+                <div class="group-details">
+                    <div class="brand">Instibuzz</div>
+                    <h3 class="product-title">White Green Premium T-shirt</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(24)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹599</div>
+                        <div class="group-price">₹399</div>
+                    </div>
+                    <div class="discount-tag">33% OFF with 3 buyers</div>
+                    <div class="expiry">Expires in: 2 days 14 hours</div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Join Group</button>
+                        <button class="btn-outline" onclick="window.location.href='shop.html'">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/products/5.png" alt="IITea Git Dreams">
+                    <div class="group-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 40%;"></div>
+                        </div>
+                        <div class="progress-text">2/5 joined</div>
+                    </div>
+                </div>
+                <div class="group-details">
+                    <div class="brand">IITea</div>
+                    <h3 class="product-title">Git Dreams Limited Edition</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(18)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹799</div>
+                        <div class="group-price">₹569</div>
+                    </div>
+                    <div class="discount-tag">40% OFF with 5 buyers</div>
+                    <div class="expiry">Expires in: 1 day 8 hours</div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Join Group</button>
+                        <button class="btn-outline" onclick="window.location.href='shop.html'">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group-card">
+                <div class="group-image">
+                    <img src="images/products/6.png" alt="IITea Premium Collection">
+                    <div class="group-badge">Trending</div>
+                    <div class="group-progress">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%;"></div>
+                        </div>
+                        <div class="progress-text">3/4 joined</div>
+                    </div>
+                </div>
+                <div class="group-details">
+                    <div class="brand">IITea</div>
+                    <h3 class="product-title">Premium Collection Bundle</h3>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>(32)</span>
+                    </div>
+                    <div class="price-container">
+                        <div class="original-price">₹999</div>
+                        <div class="group-price">₹569</div>
+                    </div>
+                    <div class="discount-tag">45% OFF with 4 buyers</div>
+                    <div class="expiry">Expires in: 16 hours</div>
+                    <div class="action-buttons">
+                        <button class="btn-primary" onclick="window.location.href='single.html'">Join Group</button>
+                        <button class="btn-outline" onclick="window.location.href='shop.html'">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="view-more">
+            <button onclick="window.location.href='groups.html'" class="btn-outline">View All Groups</button>
+        </div>
+    </section>
+
+    <section id="community-banner">
+        <div class="banner-content">
+            <h2>Create Your Own Shopping Group</h2>
+            <p>Invite friends, select products, and unlock exclusive discounts together</p>
+            <button class="btn-white" onclick="window.location.href='create-group.html'">Start a Group</button>
+        </div>
+    </section>
+
+    <section id="featured-brands" class="section-p1">
+        <div class="section-header">
+            <h2>Featured Local Brands</h2>
+            <p>Supporting small businesses in your community</p>
+        </div>
+        
+        <div class="brands-container">
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/brands/instibuzz-logo.png" alt="Instibuzz">
+                </div>
+                <h3>Instibuzz</h3>
+                <p>Premium sustainable fashion</p>
+                <div class="brand-stats">
+                    <span><i class="fas fa-users"></i> 2.4k followers</span>
+                    <span><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <button class="btn-outline">Follow</button>
+            </div>
+            
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/brands/iitea-logo.png" alt="IITea">
+                </div>
+                <h3>IITea</h3>
+                <p>Artisanal tea blends</p>
+                <div class="brand-stats">
+                    <span><i class="fas fa-users"></i> 1.8k followers</span>
+                    <span><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <button class="btn-outline">Follow</button>
+            </div>
+            
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/brands/local-crafts-logo.png" alt="Local Crafts">
+                </div>
+                <h3>Local Crafts</h3>
+                <p>Handmade accessories</p>
+                <div class="brand-stats">
+                    <span><i class="fas fa-users"></i> 3.2k followers</span>
+                    <span><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button class="btn-outline">Follow</button>
+            </div>
+            
+            <div class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/brands/homegrown-logo.png" alt="Homegrown">
+                </div>
+                <h3>Homegrown</h3>
+                <p>Organic home products</p>
+                <div class="brand-stats">
+                    <span><i class="fas fa-users"></i> 1.5k followers</span>
+                    <span><i class="fas fa-star"></i> 4.6</span>
+                </div>
+                <button class="btn-outline">Follow</button>
+            </div>
+        </div>
+        
+        <div class="view-more">
+            <button onclick="window.location.href='brands.html'" class="btn-outline">Explore All Brands</button>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section-p1">
+        <div class="section-header">
+            <h2>How CommCart Works</h2>
+            <p>Simple steps to shop socially and save together</p>
+        </div>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Discover</h3>
+                <p>Browse short videos showcasing products from local brands</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Create or Join Groups</h3>
+                <p>Form shopping groups with friends or join existing ones</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <i class="fas fa-thumbs-up"></i>
+                </div>
+                <h3>Vote & Discuss</h3>
+                <p>Share opinions and vote on group purchases</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h3>Unlock Discounts</h3>
+                <p>Enjoy dynamic discounts as more people join your group</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="app-download" class="section-p1">
+        <div class="app-content">
+            <h2>Get the CommCart App</h2>
+            <p>Shop socially on-the-go with our mobile app</p>
+            <div class="app-buttons">
+                <a href="#"><img src="images/pay/app.jpg" alt="App Store"></a>
+                <a href="#"><img src="images/pay/play.jpg" alt="Google Play"></a>
+            </div>
+        </div>
+        <div class="app-image">
+            <img src="images/app-mockup.png" alt="CommCart App">
+        </div>
+    </section>
+
+    <section id="newsletter">
+        <div class="newsletter-content">
+            <h2>Join Our Community</h2>
+            <p>Get updates on new brands, group discounts, and community events</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="Enter your email address">
+                <button class="btn-primary">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span>CommCart</span>
+                </div>
+                <p>Shop socially, support local brands, and save together.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Discover</a></li>
+                    <li><a href="groups.html">Groups</a></li>
+                    <li><a href="brands.html">Brands</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQs</a></li>
+                    <li><a href="returns.html">Returns & Refunds</a></li>
+                    <li><a href="shipping.html">Shipping Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>My Account</h4>
+                <ul>
+                    <li><a href="login.html">Sign In</a></li>
+                    <li><a href="signup.html">Register</a></li>
+                    <li><a href="cart.html">My Cart</a></li>
+                    <li><a href="orders.html">Order History</a></li>
+                    <li><a href="profile.html">My Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="payment-methods">
+                <img src="images/pay/pay.png" alt="Payment Methods">
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 CommCart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
